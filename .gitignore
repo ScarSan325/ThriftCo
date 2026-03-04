@@ -1,0 +1,57 @@
+# WARNING: deletes .vs content — safe because it's local IDE state
+rmdir /s /q .vs# Go to repo root
+cd "C:\Users\ScarSan\source\repos\ThriftCo"
+
+# Create or update .gitignore (you can paste the file content above)
+# Remove .vs from git index (keeps local files but removes from repository tracking)
+git rm -r --cached .vs
+
+# Stage and commit new .gitignore and index changes
+git add .gitignore
+git add -A
+git commit -m "Add .gitignore and remove .vs from repository"
+
+# Push to origin
+git push origin main# Visual Studio, .NET, and MAUI
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / IntelliJ
+.idea/
+
+# VS Code
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+
+# Build outputs
+*.dll
+*.exe
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local secrets / user settings
+appsettings.Development.json
+*.p12
+*.pfx
+
+# SQLite / local DBs / caches
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Temporary files
+*.log
+*.tmp
+*.temp
